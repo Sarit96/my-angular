@@ -1,12 +1,24 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, computed, effect, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'my-angular';
+  task = '';
+  taskList: { id: number; task: string }[] = [];
+
+  addTask() {
+    this.taskList.push({ id: this.taskList.length + 1, task: this.task });
+    this.task = '';
+  }
+
+  onDelete(id: number) {
+    this.taskList = this.taskList.filter((task) => {
+      return task.id !== id;
+    });
+  }
 }

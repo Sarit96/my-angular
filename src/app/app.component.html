@@ -1,11 +1,11 @@
-<h1>To DO LIST</h1>
-<input type="text"[(ngModel)]="task" placeholder="Add a new task" />
-<button (click)="addTask()">Add Task</button>
+<h1>Ng switch</h1>
 
-@for(task of taskList; track task) {
-<ul>
-  <li>{{task.id}}</li>
-  <li>{{task.task}}</li>
-  <li><button (click)="onDelete(task.id)">Delete</button></li>
-</ul>
-}
+<div [ngSwitch]="color">
+  <h1 *ngSwitchCase="color" style="background-color: red">Red color</h1>
+  <h1 style="background-color: green">Green color</h1>
+  <h1 style="background-color: blue">Blue color</h1>
+  <h1 style="background-color: yellow">Yellow color</h1>
+  <h1 style="background-color: orange">Orange color</h1>
+  <h1 style="background-color: purple">Purple color</h1>
+  <h1 style="background-color: pink">Pink color</h1>
+</div>

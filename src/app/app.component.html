@@ -1,11 +1,11 @@
-<h1>Ng switch</h1>
-
-<div [ngSwitch]="color">
-  <h1 *ngSwitchCase="color" style="background-color: red">Red color</h1>
-  <h1 style="background-color: green">Green color</h1>
-  <h1 style="background-color: blue">Blue color</h1>
-  <h1 style="background-color: yellow">Yellow color</h1>
-  <h1 style="background-color: orange">Orange color</h1>
-  <h1 style="background-color: purple">Purple color</h1>
-  <h1 style="background-color: pink">Pink color</h1>
-</div>
+<h1>Basic of React Forms</h1>
+<form action="" method="post">
+  <input type="text" placeholder="Enter Name" [formControl]="name">
+  <br/>
+  <br/>
+  <input type="email" placeholder="Enter Email"[formControl]="password">
+  <br/>
+  <br/>
+  <button type="button" (click)="displayValue()">Login</button>
+  
+</form>

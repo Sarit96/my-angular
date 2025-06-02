@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
 import {
-  FormControl,
-  FormGroup,
-  Validators,
-  ReactiveFormsModule,
-  FormsModule,
 } from '@angular/forms';
 import { UserComponent } from './user/user.component';
 
@@ -16,9 +11,5 @@ import { UserComponent } from './user/user.component';
   imports: [UserComponent],
 })
 export class AppComponent {
-  userName = 'ironMan';
-
-  onUserChange(user: string) {
-    this.userName = user;
-  }
+  users: string[] = ['Bubun', 'Swapna', 'Sarit', 'Mallick', 'Riyan']
 }

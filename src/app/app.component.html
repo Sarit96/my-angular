@@ -1,10 +1,2 @@
-<h1>Pass Data to Child Components</h1>
-<app-user [user]="userName"></app-user>
-
-<select #selectUser (change)="onUserChange(selectUser.value)" name="" id="">
-  <option value="Bubun">Bubun</option>
-  <option value="Swapna">Swapna</option>
-  <option value="Sarit">Sarit</option>
-  <option value="Mallick">Mallick</option>
-  <option value="Riyan">Riyan</option>
-</select>
+<h2>Reuse Component</h2>
+<app-user [user]="users"></app-user>

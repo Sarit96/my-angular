@@ -1,57 +1,10 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input 
-      id="name"
-      type="text" 
-      formControlName="name"
-      placeholder="Enter your name"
-      class="form-control"
-    >
-    @if (loginForm.get('name')?.hasError('required') && loginForm.get('name')?.touched) {
-      <span class="error-message">Name is required</span>
-    }
-  </div>
+<h1>Pass Data to Child Components</h1>
+<app-user [user]="userName"></app-user>
 
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input 
-      id="email"
-      type="email" 
-      formControlName="email"
-      placeholder="Enter your email"
-      class="form-control"
-    >
-    @if (loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched) {
-      <span class="error-message">Email is required</span>
-    }
-    @if (loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched) {
-      <span class="error-message">Please enter a valid email</span>
-    }
-  </div>
-
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input 
-      id="password"
-      type="password" 
-      formControlName="password"
-      placeholder="Enter your password"
-      class="form-control"
-    >
-    @if (loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched) {
-      <span class="error-message">Password is required</span>
-    }
-    @if (loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched) {
-      <span class="error-message">Password must be at least 6 characters</span>
-    }
-  </div>
-
-  <button 
-    type="submit" 
-    [disabled]="!loginForm.valid"
-    class="submit-button"
-  >
-    Submit
-  </button>
-</form>
+<select #selectUser (change)="onUserChange(selectUser.value)" name="" id="">
+  <option value="Bubun">Bubun</option>
+  <option value="Swapna">Swapna</option>
+  <option value="Sarit">Sarit</option>
+  <option value="Mallick">Mallick</option>
+  <option value="Riyan">Riyan</option>
+</select>

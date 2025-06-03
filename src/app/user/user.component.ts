@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -8,5 +8,10 @@ import { Component, Input } from '@angular/core';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  @Input() user!: string[];
+  @Output() getUsers = new EventEmitter<string[]>();
+  users: string[] = ['Bubun', 'Swapna', 'Sarit', 'Mallick', 'Riyan']
+
+  ngOnInit() {
+    this.getUsers.emit(this.users);
+  }
 }

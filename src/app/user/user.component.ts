@@ -11,6 +11,7 @@ import { CurrencyConverterPipe } from "../currency-converter.pipe";
 export class UserComponent {
  constructor() {
   console.log("constructor");
+  console.log('Hello World');
   
  }
 }

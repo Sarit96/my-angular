@@ -1,24 +1,16 @@
-import { Component, computed, effect, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import {} from '@angular/forms';
+import { UserComponent } from './user/user.component';
+import { CommonModule } from '@angular/common';
+import { CurrencyConverterPipe } from './currency-converter.pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [UserComponent]
 })
 export class AppComponent {
-  task = '';
-  taskList: { id: number; task: string }[] = [];
-
-  addTask() {
-    this.taskList.push({ id: this.taskList.length + 1, task: this.task });
-    this.task = '';
-  }
-
-  onDelete(id: number) {
-    this.taskList = this.taskList.filter((task) => {
-      return task.id !== id;
-    });
-  }
+  amount: number = 10;
 }
